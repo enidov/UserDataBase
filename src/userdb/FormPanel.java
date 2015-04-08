@@ -1,3 +1,4 @@
+package userdb;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -12,7 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.plaf.InsetsUIResource;
 
-
+@SuppressWarnings("serial")
 public class FormPanel extends JPanel {
 	
 	private JLabel nameLabel;

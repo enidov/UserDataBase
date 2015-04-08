@@ -1,10 +1,11 @@
+package userdb;
 import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-
+@SuppressWarnings("serial")
 public class TextPanel extends JPanel {
 	
 	private JTextArea textArea;
