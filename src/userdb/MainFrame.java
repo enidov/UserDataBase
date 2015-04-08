@@ -1,8 +1,10 @@
+package userdb;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 	
 private TextPanel textPanel;
@@ -10,10 +12,6 @@ private Toolbar toolbar;
 private FormPanel formPanel;
 	
 	public MainFrame(){
-		super("Users DATABase !");
-		
-		setLayout(new BorderLayout());
-		
 		toolbar = new Toolbar();
 		textPanel = new TextPanel();
 		formPanel = new FormPanel();
@@ -24,7 +22,7 @@ private FormPanel formPanel;
 			}
 		});
 		
-		formPanel.setFormListener(new FormListener(){
+		formPanel.setFormListener(new FormListener() {
 			public void formEventOccurred(FormEvent e){
 				String name= e.getName();
 				String occupation = e.getOccupation();
@@ -32,14 +30,19 @@ private FormPanel formPanel;
 				textPanel.appendText(name + " : " + occupation + "\n");
 			}
 		});
-		add(formPanel, BorderLayout.WEST);
-		add(toolbar, BorderLayout.NORTH);
-		add(textPanel, BorderLayout.CENTER);
 		
-		setMinimumSize(new Dimension(550,500));
-		setSize(550, 500);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
+		
+		this.setTitle("Users DATABase!");
+		this.setLayout(new BorderLayout());
+		
+		this.add(formPanel, BorderLayout.WEST);
+		this.add(toolbar, BorderLayout.NORTH);
+		this.add(textPanel, BorderLayout.CENTER);
+		
+		this.setMinimumSize(new Dimension(550,500));
+		this.setSize(550, 500);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
 	}
 
 }

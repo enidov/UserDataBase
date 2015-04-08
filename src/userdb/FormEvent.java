@@ -1,28 +1,31 @@
+package userdb;
 import java.util.EventObject;
 
-
+@SuppressWarnings("serial")
 public class FormEvent extends EventObject {
-	
-	String name;
-	String occupation;
+	private String name;
+	private String occupation;
 	
 	public FormEvent(Object source) {
 		super(source);
 	}
+	
 	public FormEvent(Object source,String name, String occupation) {
 		super(source);
 		this.name=name;
 		this.occupation=occupation;
 	}
+	
 	public String getName() {
-		return name;
+		return this.name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	public String getOccupation() {
-		return occupation;
+		return this.occupation;
 	}
 
 	public void setOccupation(String occupation) {

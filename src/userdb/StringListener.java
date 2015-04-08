@@ -1,3 +1,4 @@
+package userdb;
 
 public interface StringListener {
 	
