@@ -3,9 +3,8 @@ import java.util.EventObject;
 
 @SuppressWarnings("serial")
 public class FormEvent extends EventObject {
-	
-	String name;
-	String occupation;
+	private String name;
+	private String occupation;
 	
 	public FormEvent(Object source) {
 		super(source);

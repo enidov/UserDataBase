@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
@@ -15,7 +16,6 @@ import javax.swing.plaf.InsetsUIResource;
 
 @SuppressWarnings("serial")
 public class FormPanel extends JPanel {
-	
 	private JLabel nameLabel;
 	private JLabel occupationLabel;
 	private JTextField nameField;
@@ -41,10 +41,18 @@ public class FormPanel extends JPanel {
 				String name = nameField.getText();
 				String occupation = occupationField.getText();
 				
-				FormEvent ev = new FormEvent(this,name,occupation);
-				
-				if(formListener!= null){
-					formListener.formEventOccurred(ev);
+				if (name.trim().isEmpty() || occupation.trim().isEmpty()) {
+					JOptionPane.showMessageDialog(
+							null, 
+							"Make sure you added the name and the occupation", 
+							"Data missing", 
+							JOptionPane.ERROR_MESSAGE);
+				} else {
+					FormEvent ev = new FormEvent(this,name,occupation);
+					
+					if(formListener!= null){
+						formListener.formEventOccurred(ev);
+					}
 				}
 			}
 		});
